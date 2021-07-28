@@ -1,0 +1,34 @@
+class Person:
+
+    ''' A representation of a person '''
+
+    def __init__(self, name, age):
+
+        ''' A name and age of an object '''
+
+        self._name = name
+        self._age = age
+
+    def get_age(self):
+
+        ''' Returns the age attribute of an object '''
+
+        return self._age
+
+
+def std_dev(person_list):
+
+    ''' A function that takes in a list of Person objects and returns the standard deviation of all their ages '''
+
+    age_sum = 0
+    deviation = 0
+
+    for person in person_list:
+        age_sum += person.get_age()
+
+    mean = age_sum / (len(person_list))
+
+    for person in person_list:
+        deviation += (person.get_age() - mean) ** 2
+
+    return (deviation/len(person_list))**0.5
