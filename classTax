@@ -1,0 +1,43 @@
+class Taxicab:
+
+    '''A representation of a Taxicab'''
+
+    def __init__(self, x, y):
+
+        ''' Creates a Taxicab object with x, y coordinates and an odometer reading'''
+
+        self._x_coord = x
+        self._y_coord = y
+        self._odometer = 0
+
+    def get_x_coord(self):
+
+        ''' Returns current x coorordinate '''
+
+        return self._x_coord
+
+    def get_y_coord(self):
+
+        ''' Returns current y coorordinate '''
+
+        return self._y_coord
+
+    def get_odometer(self):
+
+        ''' Returns current odometer reading'''
+
+        return self._odometer
+
+    def move_x(self, value):
+
+        ''' Expresses how far left or right the Taxicab object has moved, and updates the odometer. '''
+
+        self._x_coord = self._x_coord + value
+        self._odometer += abs(value) # Negative numbers affect odometer reading, use abs()
+
+    def move_y(self, value):
+
+        ''' Expresses how far up or down the Taxicab object has moved, and updates the odometer. '''
+
+        self._y_coord = self._y_coord + value
+        self._odometer += abs(value) # Negative numbers affect odometer reading, use abs()
